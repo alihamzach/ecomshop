@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <!-- BEGIN #my-account -->
+    <div id="about-us-cover" class="section-container">
+        <!-- BEGIN container -->
+        <div class="container">
+            <!-- BEGIN breadcrumb -->
+            <ul class="breadcrumb m-b-10 f-s-12">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Store</a></li>
+                <li class="active">My Account</li>
+            </ul>
+            <!-- END breadcrumb -->
+            <!-- BEGIN account-container -->
+            <div class="account-container">
+                <!-- BEGIN account-sidebar -->
+                <div class="account-sidebar">
+                    <div class="account-sidebar-cover">
+                        <img src="static/img/my-account-cover.jpg" alt="" />
+                    </div>
+                    <div class="account-sidebar-content">
+                        <h4>Your Account</h4>
+                        <p>
+                            Modify an order, track a shipment, and update your account info.
+                        </p>
+                        <p>
+                            All you need in one place. All with a few simple clicks.
+                        </p>
+                    </div>
+                </div>
+                <!-- END account-sidebar -->
+                <!-- BEGIN account-body -->
+                <div class="account-body">
+                    <!-- BEGIN row -->
+                    <div class="row">
+                        <h1>You Want To Login Or Signup ?</h1>
+                        <br>
+                        <br>
+                        <div class="text-center">
+                            <form action="{% url 'account' %}">
+                                {% csrf_token %}
+                                <button class="btn btn-inverse btn-lg" type="submit">Login</button>
+                            </form>
+                            <form action="{% url 'register' %}">
+                                {% csrf_token %}
+                                <button class="btn btn-inverse btn-lg" type="submit">Register</button>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- END row -->
+                </div>
+                <!-- END account-body -->
+            </div>
+            <!-- END account-container -->
+        </div>
+        <!-- END container -->
+    </div>
+    <!-- END #about-us-cover -->
+{% endblock %}
